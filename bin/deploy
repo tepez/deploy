@@ -241,7 +241,7 @@ deploy() {
     hook test
     if test $? -ne 0; then
       log tests failed, reverting deploy
-      quickly_revert_to 1 && log "revert complete" && exit
+      quickly_revert_to 1 && log "revert complete" && exit 1
     fi
   else
     log ignoring tests
